@@ -1,0 +1,111 @@
+<template>
+  <v-card class="glassmorphismCard" rounded="xl">
+    <v-card-text>
+      <v-row dense align="center">
+        <v-col cols="12" md="8">
+          <v-card-title>
+            <v-row dense>
+              <v-col cols="12">
+                <v-avatar
+                  class="ml-4"
+                  size="127px"
+                  image="https://randomuser.me/api/portraits/men/21.jpg"
+                ></v-avatar>
+              </v-col>
+              <v-col cols="12" class="d-flex justify-center">
+                <div class="mx-auto">
+                  <p class="text-h4">
+                    <span>Hi,</span><br />
+                    <span>
+                      I'am
+                      <span class="hidden-md-and-down">Muhammad </span>Dayyan
+                      Syauqi <br />
+                      a Junior web developer
+                    </span>
+                  </p>
+                  <v-divider></v-divider>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Perferendis provident voluptatum corrupti ducimus
+                    dignissimos quia magnam debitis! Odio nobis veniam
+                    architecto quod. Esse vitae quo deleniti, beatae illum
+                    veritatis itaque?
+                  </p>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card-title>
+        </v-col>
+        <v-col cols="4" class="hidden-md-and-down">
+          <v-img
+            :src="require('@/assets/image/web-designer-with-idea.gif')"
+            class="mx-auto"
+            width="320px"
+          />
+        </v-col>
+      </v-row>
+      <ContentGrid>
+        <template v-slot:title>
+          <span class="text-h3 text-white text-decoration-underline"
+            >My Skills</span
+          >
+        </template>
+        <v-col v-for="skill in skills" :key="skill.title" cols="12" md="4">
+          <ContentCard :content="skill" variant="outlined" color="white" />
+        </v-col>
+      </ContentGrid>
+    </v-card-text>
+  </v-card>
+</template>
+<script lang="ts">
+import { defineComponent } from "vue";
+import ContentGrid from "./ContentGrid.vue";
+import Frontend from "@/assets/image/frontend.png";
+import Backend from "@/assets/image/backend.png";
+import Fullstack from "@/assets/image/fullstack.png";
+import ContentCard from "./ContentCard.vue";
+
+export default defineComponent({
+  name: "JumbotronHeaderComponent",
+  components: {
+    ContentGrid,
+    ContentCard,
+  },
+  data() {
+    return {
+      show: "",
+      skills: [
+        {
+          title: "Frontend Developer",
+          subtitle: "{ Vue js, Vuetify, Tailwindcss }",
+          image: Frontend,
+          descreption: "",
+        },
+        {
+          title: "Backend Developer",
+          subtitle: "{ Node js, Mongodb, Socket.io }",
+          image: Backend,
+          descreption: "",
+        },
+        {
+          title: "FullStack Developer",
+          subtitle: "{ Nuxt js, Laravel }",
+          image: Fullstack,
+          descreption: "",
+        },
+      ],
+    };
+  },
+});
+</script>
+
+<style>
+.glassmorphismCard {
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+</style>
