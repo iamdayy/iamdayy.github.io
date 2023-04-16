@@ -44,7 +44,7 @@
           />
         </v-col>
       </v-row>
-      <ContentGrid>
+      <ContentGrid id="skill">
         <template v-slot:title>
           <span class="text-h3 text-white text-decoration-underline"
             >My Skills</span
@@ -60,11 +60,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ContentGrid from "./ContentGrid.vue";
-import Frontend from "@/assets/image/frontend.png";
-import Backend from "@/assets/image/backend.png";
-import Fullstack from "@/assets/image/fullstack.png";
 import ContentCard from "./ContentCard.vue";
-
+import { skills } from "@/data/data";
 export default defineComponent({
   name: "JumbotronHeaderComponent",
   components: {
@@ -74,26 +71,7 @@ export default defineComponent({
   data() {
     return {
       show: "",
-      skills: [
-        {
-          title: "Frontend Developer",
-          subtitle: "{ Vue js, Vuetify, Tailwindcss }",
-          image: Frontend,
-          descreption: "",
-        },
-        {
-          title: "Backend Developer",
-          subtitle: "{ Node js, Mongodb, Socket.io }",
-          image: Backend,
-          descreption: "",
-        },
-        {
-          title: "FullStack Developer",
-          subtitle: "{ Nuxt js, Laravel }",
-          image: Fullstack,
-          descreption: "",
-        },
-      ],
+      skills,
     };
   },
 });

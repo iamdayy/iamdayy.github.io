@@ -4,7 +4,7 @@
     <v-main>
       <v-container fluid>
         <JumbotronHeader />
-        <ContentGrid>
+        <ContentGrid id="portfolio">
           <template v-slot:title>
             <span class="text-h3 text-white text-decoration-underline"
               >My Portfolio Check</span
@@ -15,8 +15,20 @@
             :key="portfolio.title"
             cols="4"
           >
-            <ContentCard :content="portfolio" />
+            <ContentCard :content="portfolio">
+              <template v-slot:actions>
+                <v-btn variant="outlined" :href="portfolio.link">Open</v-btn>
+              </template>
+            </ContentCard>
           </v-col>
+        </ContentGrid>
+        <ContentGrid id="contact">
+          <template v-slot:title>
+            <span class="text-h3 text-white text-decoration-underline"
+              >Contact Me</span
+            >
+          </template>
+          <v-col cols="12"></v-col>
         </ContentGrid>
       </v-container>
     </v-main>
@@ -31,6 +43,7 @@ import JumbotronHeader from "./components/JumbotronHeader.vue";
 import FooterBar from "@/components/FooterBar.vue";
 import ContentGrid from "./components/ContentGrid.vue";
 import ContentCard from "./components/ContentCard.vue";
+import { portfolios } from "./data/data";
 export default defineComponent({
   name: "App",
   components: {
@@ -44,26 +57,7 @@ export default defineComponent({
   data() {
     return {
       show: false,
-      portfolios: [
-        {
-          title: "",
-          subtitle: "",
-          image: "",
-          descreption: "",
-        },
-        {
-          title: "",
-          subtitle: "",
-          image: "",
-          descreption: "",
-        },
-        {
-          title: "",
-          subtitle: "",
-          image: "",
-          descreption: "",
-        },
-      ],
+      portfolios,
     };
   },
 });

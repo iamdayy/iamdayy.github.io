@@ -7,7 +7,10 @@
     max-width="344"
   >
     <v-img
-      :src="content?.image"
+      :src="
+        content?.image ??
+        'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'
+      "
       gradient="to bottom, rgba(6, 0, 107, 0.2), rgba(2, 2, 117, 0.2), rgba(0, 212, 255, 0.2)"
       height="200px"
       aspect-ratio="16/9"
@@ -21,6 +24,7 @@
     }}</v-card-subtitle>
 
     <v-card-actions>
+      <slot name="actions" />
       <v-spacer></v-spacer>
 
       <v-btn
@@ -40,12 +44,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-interface Data {
-  title: string;
-  subtitle: string;
-  image: string;
-  descreption: string;
-}
+import { Content } from "@/types";
 export default defineComponent({
   name: "ContentGrid",
   data() {
@@ -54,7 +53,7 @@ export default defineComponent({
     };
   },
   props: {
-    content: {} as PropType<Data>,
+    content: {} as PropType<Content>,
     variant: String as PropType<
       | "text"
       | "outlined"
