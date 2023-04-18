@@ -5,13 +5,13 @@
         <v-col cols="12" md="8">
           <v-card-title>
             <v-row dense>
-              <v-col cols="12">
+              <!-- <v-col cols="12">
                 <v-avatar
                   class="ml-4"
                   size="127px"
                   image="https://randomuser.me/api/portraits/men/21.jpg"
                 ></v-avatar>
-              </v-col>
+              </v-col> -->
               <v-col cols="12" class="d-flex justify-center">
                 <div class="mx-auto">
                   <p class="text-h4">Hi,</p>
