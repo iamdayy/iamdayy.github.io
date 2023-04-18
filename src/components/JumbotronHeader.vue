@@ -24,16 +24,13 @@
                   </div>
                   <p>
                     <v-divider
-                      thickness="4"
-                      class="mr-6 border-opacity-100"
+                      thickness="3"
+                      class="mr-6 border-opacity-50"
                     ></v-divider>
                     <span class="text-h5">a Junior web developer</span>
                     <v-divider></v-divider>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Perferendis provident voluptatum corrupti ducimus
-                    dignissimos quia magnam debitis! Odio nobis veniam
-                    architecto quod. Esse vitae quo deleniti, beatae illum
-                    veritatis itaque?
+                    Fullstack developer based in Pekalongan, Indonesian I’am
+                    coding with a clean and beautiful problem solving in mind.
                   </p>
                 </div>
               </v-col>
@@ -50,7 +47,7 @@
       </v-row>
       <ContentGrid id="skill">
         <template v-slot:title>
-          <span class="text-h3 text-white text-decoration-underline"
+          <span class="text-h5 text-white text-decoration-underline"
             >My Skills</span
           >
         </template>
@@ -97,7 +94,9 @@ export default defineComponent({
   border-right: 0.15em solid white;
   -webkit-animation: type 4s steps(40, end),
     blink 0.2s step-end infinite alternate;
+  -webkit-animation-delay: 3s;
   animation: type 4s steps(40, end), blink 0.2s step-end infinite alternate;
+  animation-delay: 3s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }

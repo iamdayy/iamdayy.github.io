@@ -1,5 +1,9 @@
 <template>
-  <v-footer color="red" class="text-white" height="140px">
+  <v-footer
+    color="indigo"
+    class="text-white w-100 d-flex justify-center align-center"
+    height="140px"
+  >
     <div class="custom-shape-divider-top-1681359926">
       <svg
         data-name="Layer 1"
@@ -23,7 +27,11 @@
         ></path>
       </svg>
     </div>
-    <div class="mt-8">this footer</div>
+    <div class="mt-8">
+      <h1 class="text-weight-medium text-white text-h5">
+        Copyright Iamdayy 2023
+      </h1>
+    </div>
   </v-footer>
 </template>
 <script lang="ts">

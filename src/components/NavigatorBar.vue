@@ -8,23 +8,39 @@
       <v-btn href="#contact" class="hidden-sm-and-down">Contact</v-btn>
     </v-toolbar-items>
     <v-toolbar-items variant="plain">
-      <v-btn
-        href="#skill"
-        class="hidden-md-and-up"
-        icon="mdi-lightbulb-outline"
-      >
-        <v-tooltip activator="parent" location="bottom">Skill</v-tooltip>
-      </v-btn>
-      <v-btn href="#portfolio" class="hidden-md-and-up" icon="mdi-creation">
-        <v-tooltip activator="parent" location="bottom">Portfolio</v-tooltip>
-      </v-btn>
-      <v-btn
-        href="#contact"
-        class="hidden-md-and-up"
-        icon="mdi-account-outline"
-      >
-        <v-tooltip activator="parent" location="bottom">Contact</v-tooltip>
-      </v-btn>
+      <v-tooltip anchor="bottom" text="Skill">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            href="#skill"
+            class="hidden-md-and-up"
+            icon="mdi-lightbulb-outline"
+          >
+          </v-btn>
+        </template>
+      </v-tooltip>
+      <v-tooltip anchor="bottom" text="Portfolio">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            href="#portfolio"
+            class="hidden-md-and-up"
+            icon="mdi-creation"
+          >
+          </v-btn>
+        </template>
+      </v-tooltip>
+      <v-tooltip anchor="bottom" text="Contact">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            href="#contact"
+            class="hidden-md-and-up"
+            icon="mdi-account-outline"
+          >
+          </v-btn>
+        </template>
+      </v-tooltip>
     </v-toolbar-items>
   </v-toolbar>
 </template>

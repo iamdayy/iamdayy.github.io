@@ -6,14 +6,15 @@
         <JumbotronHeader />
         <ContentGrid id="portfolio">
           <template v-slot:title>
-            <span class="text-h3 text-white text-decoration-underline"
-              >My Portfolio Check</span
+            <span class="text-h5 text-white text-decoration-underline"
+              >My Portfolio</span
             >
           </template>
           <v-col
             v-for="portfolio in portfolios"
             :key="portfolio.title"
-            cols="4"
+            cols="12"
+            md="4"
           >
             <ContentCard :content="portfolio" classes="glassmorphismCard">
               <template v-slot:actions>
@@ -26,7 +27,7 @@
         </ContentGrid>
         <ContentGrid id="contact">
           <template v-slot:title>
-            <span class="text-h3 text-white text-decoration-underline"
+            <span class="text-h5 text-white text-decoration-underline"
               >Contact Me</span
             >
           </template>
