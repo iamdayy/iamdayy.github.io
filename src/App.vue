@@ -74,6 +74,9 @@ export default defineComponent({
       contacts,
     };
   },
+  beforeCreate() {
+    document.title = "Iamdayy";
+  },
 });
 </script>
 <style>
