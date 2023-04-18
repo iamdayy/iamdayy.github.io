@@ -14,17 +14,21 @@
               </v-col>
               <v-col cols="12" class="d-flex justify-center">
                 <div class="mx-auto">
-                  <p class="text-h4">
-                    <span>Hi,</span><br />
-                    <span>
+                  <p class="text-h4">Hi,</p>
+                  <div class="typewriter">
+                    <p class="text-h4 font-weight-bold">
                       I'am
                       <span class="hidden-md-and-down">Muhammad </span>Dayyan
                       Syauqi <br />
-                      a Junior web developer
-                    </span>
-                  </p>
-                  <v-divider></v-divider>
+                    </p>
+                  </div>
                   <p>
+                    <v-divider
+                      thickness="4"
+                      class="mr-6 border-opacity-100"
+                    ></v-divider>
+                    <span class="text-h5">a Junior web developer</span>
+                    <v-divider></v-divider>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perferendis provident voluptatum corrupti ducimus
                     dignissimos quia magnam debitis! Odio nobis veniam
@@ -78,6 +82,59 @@ export default defineComponent({
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.typewriter {
+  max-width: fit-content;
+}
+.typewriter p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typewriter p:nth-child(1) {
+  width: 100%;
+  border-right: 0.15em solid white;
+  -webkit-animation: type 4s steps(40, end),
+    blink 0.2s step-end infinite alternate;
+  animation: type 4s steps(40, end), blink 0.2s step-end infinite alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid white;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 0.15em solid white;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
 .glassmorphismCard {
   background: rgba(255, 255, 255, 0.38);
   border-radius: 16px;

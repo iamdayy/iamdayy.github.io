@@ -15,9 +15,11 @@
             :key="portfolio.title"
             cols="4"
           >
-            <ContentCard :content="portfolio">
+            <ContentCard :content="portfolio" classes="glassmorphismCard">
               <template v-slot:actions>
-                <v-btn variant="outlined" :href="portfolio.link">Open</v-btn>
+                <v-btn variant="outlined" rounded="xl" :href="portfolio.link"
+                  >Open</v-btn
+                >
               </template>
             </ContentCard>
           </v-col>
@@ -28,7 +30,15 @@
               >Contact Me</span
             >
           </template>
-          <v-col cols="12"></v-col>
+          <v-col
+            v-for="contact in contacts"
+            :key="contact.link"
+            class="d-flex justify-center align-center"
+            cols="12"
+            md="4"
+          >
+            <ContactCard :item="contact" />
+          </v-col>
         </ContentGrid>
       </v-container>
     </v-main>
@@ -43,7 +53,8 @@ import JumbotronHeader from "./components/JumbotronHeader.vue";
 import FooterBar from "@/components/FooterBar.vue";
 import ContentGrid from "./components/ContentGrid.vue";
 import ContentCard from "./components/ContentCard.vue";
-import { portfolios } from "./data/data";
+import { portfolios, contacts } from "./data/data";
+import ContactCard from "./components/ContactCard.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -52,12 +63,14 @@ export default defineComponent({
     FooterBar,
     ContentGrid,
     ContentCard,
+    ContactCard,
   },
 
   data() {
     return {
       show: false,
       portfolios,
+      contacts,
     };
   },
 });

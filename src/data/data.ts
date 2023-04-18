@@ -4,6 +4,10 @@ import Frontend from "@/assets/image/frontend.png";
 import Backend from "@/assets/image/backend.png";
 import Fullstack from "@/assets/image/fullstack.png";
 
+import Github from "@/assets/image/github.gif";
+import Instagram from "@/assets/image/instagram.gif";
+import Whatsapp from "@/assets/image/whatsapp.gif";
+
 export const skills: Content[] = [
   {
     title: "Frontend Developer",
@@ -50,5 +54,20 @@ export const portfolios: Content[] = [
     link: "https://chat-on-dayy.netlify.app",
     descreption:
       "A Chat App with vue js framework, express js api backend, Socket.io, and mongoDB database",
+  },
+];
+
+export const contacts = [
+  {
+    image: Github,
+    link: "https://github.com/iamdayy",
+  },
+  {
+    image: Instagram,
+    link: "https://www.instagram.com/__iamdayy/",
+  },
+  {
+    image: Whatsapp,
+    link: "https://wa.me/6285326940952",
   },
 ];

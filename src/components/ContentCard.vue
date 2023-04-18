@@ -2,7 +2,7 @@
   <v-card
     :variant="variant"
     rounded="xl"
-    class="mx-auto"
+    :class="'mx-auto' + ' ' + classes"
     :color="color"
     max-width="344"
   >
@@ -54,6 +54,7 @@ export default defineComponent({
   },
   props: {
     content: {} as PropType<Content>,
+    classes: String,
     variant: String as PropType<
       | "text"
       | "outlined"
